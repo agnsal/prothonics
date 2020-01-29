@@ -1,7 +1,7 @@
 # coding : utf-8
 
 '''
-Copyright 2019 Agnese Salutari.
+Copyright 2019-2020 Agnese Salutari.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -33,7 +33,7 @@ class Memory:
     def getLastNArrayElements(self, arr, num):
         num = int(num)
         if len(arr) >= num:
-            return arr[len(self.__decisions) - num:-1]
+            return arr[len(self.__decisions) - num:]
 
     def putTimestampedElementToArray(self, arr, elem):
         arr = list(arr)

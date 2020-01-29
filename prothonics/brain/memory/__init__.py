@@ -13,7 +13,7 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 See the License for the specific language governing permissions and limitations under the License
 '''
 
-
+from collections import deque
 import numpy as np
 import time
 
@@ -37,9 +37,10 @@ class Memory:
 
     def putTimestampedElementToArray(self, arr, elem):
         arr = list(arr)
-        del arr[0]
         arr.append([elem, time.time()])
-        return arr
+        arr = deque(arr)
+        arr.popleft()
+        return list(arr)
 
     def getAllDecisions(self):
         return self.__decisions
